@@ -97,7 +97,8 @@ void adc_disable() {
 }
 
 void mux_set(ADC_pin pin) {
-    ADMUX |= (ADMUX & 0xf0) | pin;
+    ADMUX |= pin;
+    ADMUX &= (pin | 0xf0);
 }
 
 void adc_start_conv(ADC_pin pin) {

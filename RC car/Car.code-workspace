@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "Car",
+			"path": "Car"
+		},
+		{
+			"name": "Joystick",
+			"path": "Joystick"
+		},
+		{
+			"name": "libs",
+			"path": "libs"
+		}
+	],
+	"settings": {}
+}
