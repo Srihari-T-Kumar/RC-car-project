@@ -23,7 +23,7 @@ void setup() {
 }
 
 void loop() {
-    Vec_16_t speeds;
+    Vec_32_t speeds;
 
     if(x_val > 127 - DEADZONE && x_val < 127 + DEADZONE && y_val > 127 - DEADZONE && y_val < 127 + DEADZONE) speeds = ZERO;
     else {

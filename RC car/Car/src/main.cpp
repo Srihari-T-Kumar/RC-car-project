@@ -15,14 +15,14 @@ static RF24 radio(9, 10);
 static const uint8_t* address = (uint8_t*)"00001";
 
 static uint32_t last_rx_ms;
-static Vec_16_t last_speeds;
+static Vec_32_t last_speeds;
 
 uint32_t actual_millis() { return millis()/8;}
 
-void set_motor_speed(Vec_16_t last_speeds) {
+void set_motor_speed(Vec_32_t last_speeds) {
     PORTD &= ~(_BV(MLF) | _BV(MLB) | _BV(MRF) | (_BV(MRB)));
 
-    int16_t left = last_speeds.x, right = last_speeds.y;
+    int16_t left = (int16_t)last_speeds.x, right = (int16_t)last_speeds.y;
 
     PORTD |= (left > 0) ? (_BV(MLF)) : (left < 0) ? (_BV(MLB)) : 0;
     PORTD |= (right > 0) ? (_BV(MRF)) : (right < 0) ? (_BV(MRB)) : 0;
